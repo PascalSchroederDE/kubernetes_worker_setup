@@ -1,4 +1,5 @@
 #!/bin/bash -l
+swapoff -a
 sudo apt-get update
 sudo apt-get install -y docker.io
 sudo apt-get update
