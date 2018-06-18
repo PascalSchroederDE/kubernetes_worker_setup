@@ -1,3 +1,4 @@
+#!/bin/bash -l
 sudo apt-get update
 sudo apt-get install -y docker.io
 sudo apt-get update
@@ -7,5 +8,5 @@ deb http://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 sudo apt-get update 
 sudo apt-get install -y kubelet kubeadm kubectl --allow-unauthenticated
-wget http://download.nextag.com/apache/hadoop/common/hadoop-3.1.0/hadoop-3.1.0.tar.gz
-tar -xvzf hadoop-3.1.0.tar.gz /usr/local/hadoop 
+kubeadm join $1 --token $2 --discovery-token-ca-cert-hash $3
+
